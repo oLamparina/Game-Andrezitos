@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Carregando</title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      overflow: hidden;
+      font-family: "Times New Roman", Times, serif;
+    }
+
+    body {
+      background: url('assets/images/fundo2.png') no-repeat center center fixed;
+      background-size: cover;
+      position: relative;
+    }
+
+    .blur-overlay {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      backdrop-filter: blur(3.5px);
+      background-color: rgba(0, 0, 0, 0.4);
+      z-index: 1;
+    }
+
+    .content {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      color: white;
+      z-index: 2;
+      padding: 20px;
+      max-width: 800px;
+    }
+
+    h1 {
+      font-size: 2.5em;
+      border-top: 2px solid white;
+      border-bottom: 2px solid white;
+      padding: 10px 0;
+      margin-bottom: 30px;
+    }
+
+    p {
+      font-size: 1.4em;
+      line-height: 1.6em;
+    }
+
+    .fade-out {
+      animation: fadeOut 2s ease-in-out forwards;
+    }
+
+    @keyframes fadeOut {
+      to {
+        opacity: 0;
+        background-color: black;
+      }
+    }
+
+    .word {
+      opacity: 0;
+      animation: fadeInWord 0.5s forwards;
+    }
+
+    @keyframes fadeInWord {
+      to {
+        opacity: 1;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="blur-overlay"></div>
+
+  <div class="content">
+    <h1>CARREGANDO</h1>
+    <p id="animated-text"></p>
+  </div>
+
+  <script>
+    const texto = "Andrezitos, o bruxo, deve enfrentar as vitórias-régias que despencam dos céus. A cada dez que são derrotadas, o poderoso Andre Young, deve enfrentar um temível BOSS que surge das profundezas do desconhecido.";
+    const palavras = texto.split(" ");
+    const container = document.getElementById("animated-text");
+
+    palavras.forEach((palavra, i) => {
+      const span = document.createElement("span");
+      span.textContent = palavra + " ";
+      span.classList.add("word");
+      span.style.animationDelay = `${(i * (8 / palavras.length)).toFixed(2)}s`;
+      container.appendChild(span);
+    });
+
+    setTimeout(() => {
+      document.body.classList.add("fade-out");
+      setTimeout(() => {
+        window.location.href = "arena1.html";
+      }, 2000);
+    }, 9000);
+  </script>
+</body>
+</html>

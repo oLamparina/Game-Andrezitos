@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arena 1 - Ataque das Vitórias-Régias</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <div id="game-container">
+        <div id="hud">
+            <div id="health-container">
+                <div id="health-bar"></div>
+            </div>
+            <div id="score-container">
+                <p>Derrotadas: <span id="score">0</span>/10</p>
+            </div>
+        </div>
+
+        <img src="assets/images/player.png" id="player" alt="Bruxo">
+
+        <div id="card-choice-overlay" class="hidden">
+            <div id="card-container">
+                <img src="assets/images/carta1.png" class="card" data-choice="damage" title="Aumenta o dano do raio para 9">
+                <img src="assets/images/carta2.png" class="card" data-choice="speed" title="Aumenta a velocidade de movimento">
+                <img src="assets/images/carta3.png" class="card" data-choice="jump" title="Aumenta a altura do pulo">
+            </div>
+        </div>
+        
+        <div id="boss-intro-overlay" class="hidden">
+            <h1 id="boss-intro-text">O PRIMEIRO BOSS</h1>
+        </div>
+
+        <div id="on-screen-controls">
+    <div class="control-cluster">
+        <button id="btn-left">A</button>
+        <button id="btn-right">S</button>
+    </div>
+    <div class="control-cluster">
+        <button id="btn-jump">JUMP</button>
+        <button id="btn-attack">ATTACK</button> <!-- Botão adicionado aqui -->
+    </div>
+</div>
+
+    </div>
+
+    <script src="assets/js/script.js"></script>
+</body>
+</html>

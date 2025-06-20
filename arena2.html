@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arena 2 - Confronto com o Lobo-Guará</title>
+    <link rel="stylesheet" href="assets/css/arena2.css">
+</head>
+<body>
+    <div id="game-container">
+        <div id="hud">
+            <div id="player-hud">
+                <p>JOGADOR</p>
+                <div id="player-health-container">
+                    <div id="player-health-bar"></div>
+                </div>
+            </div>
+            <div id="boss-hud">
+                <p>————— LOBO-GUARÁ —————</p>
+                <p id="wolf-health-text">100/100</p>
+            </div>
+            <div style="width: 230px;"></div>
+        </div>
+
+        <img src="assets/images/player.png" id="player" alt="Bruxo">
+        <img src="assets/images/lobo.png" id="lobo" alt="Lobo-Guará">
+
+        <div id="card-choice-overlay">
+            <div id="card-container">
+                <img src="assets/images/carta1a.png" class="card" data-choice="damage" title="Dano do ataque básico aumentado para 20.">
+                <img src="assets/images/carta2a.png" class="card" data-choice="speed" title="Sua velocidade de movimento aumenta.">
+                <img src="assets/images/carta3a.png" class="card" data-choice="lightning" title="Pressione F para invocar um raio devastador (25 de dano).">
+            </div>
+        </div>
+
+        <div id="death-overlay" class="hidden">
+            <div id="death-content">
+                <img id="rhino-animation" src="assets/images/rinoceronte.png" alt="Animação de Morte">
+                <button id="revive-button">[ Levante-se Jogador ]</button>
+            </div>
+        </div>
+
+         <div id="cooldown-display" class="hidden">
+             <p>Raio em <span id="cooldown-timer">10</span>s</p>
+        </div>
+
+        <div id="on-screen-controls">
+            <div class="control-cluster">
+                <button id="btn-left">A</button>
+                <button id="btn-right">D</button>
+            </div>
+            <div class="control-cluster">
+                <button id="btn-jump">JUMP</button>
+                <button id="btn-attack">ATTACK</button>
+                <button id="btn-f" class="hidden">F</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="assets/js/arena2.js"></script>
+</body>
+</html>

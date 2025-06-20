@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Menu Inicial</title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      font-family: "Times New Roman", Times, serif;
+      overflow: hidden;
+    }
+
+    body {
+      background: url('assets/images/fundo.png') no-repeat center center fixed;
+      background-size: cover;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .menu {
+      text-align: right;
+      position: absolute;
+      bottom: 10%;
+      right: 10%;
+    }
+
+    .menu a {
+      display: block;
+      color: white;
+      font-size: 2em;
+      text-decoration: none;
+      margin: 10px 0;
+      opacity: 0;
+      transform: translateY(10px);
+      animation: fadeInLine 0.5s forwards;
+      animation-fill-mode: forwards;
+      transition: transform 0.3s ease;
+    }
+
+    .menu a:hover {
+      transform: translateX(-10px);
+    }
+
+    @keyframes fadeInLine {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="menu">
+    <a href="newGame.html" style="animation-delay: 0.5s;">NOVO JOGO</a>
+    <a href="howToPlay.html" style="animation-delay: 1s;">COMO JOGAR!</a>
+    <a href="config.html" style="animation-delay: 1.5s;">CONFIGURAÇÕES</a>
+    <a href="atribuicoes.html" style="animation-delay: 2s;">CRÉDITOS</a>
+  </div>
+</body>
+</html>
